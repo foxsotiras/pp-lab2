@@ -20,7 +20,7 @@ class HTTPError(Exception):
 
 
 def is_roman_numeral(number: str) -> bool:
-    return regex.match(number)
+    return regex.match(number) is not None
 
 def get_roman_numerals_from_url(url: str) -> list:
     request = requests.get(url)
@@ -40,7 +40,7 @@ def main():
         print("Чтение валидных римских чисел с сайта:")
         for i in matched_list_url:
             print(i)
-        
+
         print("Чтение валидных римских чисел с файла:")
         for i in matched_list_file:
             print(i)
